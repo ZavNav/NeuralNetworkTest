@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace NeuralNetwork
@@ -26,7 +27,7 @@ namespace NeuralNetwork
         {
             foreach (var input in inputs)
             {
-                output += input * weight;
+                output += 1 / (1 + Math.Pow(Math.E, -(input * weight)));
             }
 
             return output;
