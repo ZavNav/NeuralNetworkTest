@@ -13,6 +13,13 @@ namespace NeuralNetwork
             Layers.Add(new Layer(1, NeuronType.output));
         }
 
+        public void InitiateWeights()
+        {
+            for (var i = 0; i < Layers.Count-1; i++)
+            {
+                Layers[i].InitiateWeights(Layers[i+1].Neurons.Count);
+            }
+        }
         public double StartNetwork()
         {
             var outputs = new List<double>();

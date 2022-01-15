@@ -12,16 +12,17 @@ namespace NeuralNetwork
             //var secondNum = decimal.Parse(Console.ReadLine());
 
             var network = new Network(1, 1, 0);
+            network.InitiateWeights();
 
             const int expectedResult = 1;
             var results = new List<double>();
 
-            for (var i = 0; i < 5; i++)
-            {
-                results.Add(network.StartNetwork());
-                var mse = GetMse(expectedResult, results.ToArray());//mean squared error
-                Console.WriteLine($"Result: {results.Last()}, MSE: {mse}");
-            }
+            // for (var i = 0; i < 5; i++)
+            // {
+            //     results.Add(network.StartNetwork());
+            //     var mse = GetMse(expectedResult, results.ToArray());//mean squared error
+            //     Console.WriteLine($"Result: {results.Last()}, MSE: {mse}");
+            // }
             Console.WriteLine(network.StartNetwork());
         }
 
